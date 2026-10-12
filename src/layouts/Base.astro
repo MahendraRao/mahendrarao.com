@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import { SITE } from '../config';
+
+interface Props { title?: string; description?: string; }
+const { title, description = SITE.tagline } = Astro.props;
+const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} — DevOps & SRE`;
+const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site);
+const is = (p: string) => (p === '/' ? path === '/' : path.startsWith(p));
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="wide">
+        <a class="brand" href="/">mahendra<span>.</span>rao</a>
+        <nav class="site" aria-label="Main">
+          <a href="/learn" aria-current={is('/learn') ? 'page' : undefined}>Knowledge Park 101</a>
+          <a href="/work-with-me" aria-current={is('/work-with-me') ? 'page' : undefined}>Work with me</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="site">
+      <div class="wide">
+        <span>© {new Date().getFullYear()} Mahendra Rao · Pune, India</span>
+        <span>
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a> ·
+          <a href={SITE.portfolio}>Portfolio</a> ·
+          <a href={SITE.github}>GitHub</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

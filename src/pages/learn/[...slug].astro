@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { SITE } from '../../config';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('learn', (p) => !p.data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+---
+<Base title={d.title} description={d.description}>
+  <article class="wrap" style="padding-top:56px">
+    <p class="eyebrow"><a href="/learn" style="text-decoration:none">← Knowledge Park 101</a></p>
+    <h1>{d.title}</h1>
+    <p class="meta">
+      {d.topic} · {d.level} · {d.minutes} min ·
+      {d.date.toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' })}
+    </p>
+    <Content />
+    <div class="callout">
+      <h3>Stuck somewhere?</h3>
+      <p>Email me the command you ran and the error you got: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. I read every message.</p>
+    </div>
+  </article>
+</Base>

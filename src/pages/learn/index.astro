@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const all = (await getCollection('learn', (p) => !p.data.draft)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const topics = [...new Set(all.map((p) => p.data.topic))];
+const soon = [
+  { t: 'Docker', d: 'Images, containers, volumes, Compose' },
+  { t: 'Kubernetes', d: 'Pods, Deployments, Services, debugging' },
+  { t: 'YAML', d: 'The indentation rules that trip everyone' },
+];
+---
+<Base title="Knowledge Park 101" description="Beginner-friendly, self-tested guides for Bash, Docker, Kubernetes and YAML.">
+  <section class="wide hero">
+    <p class="eyebrow">Knowledge Park 101</p>
+    <h1>Learn it by running it.</h1>
+    <p class="lead">Short guides for absolute beginners. Each one has a script you can copy, a way to break it, and a small challenge.</p>
+  </section>
+
+  {topics.map((topic) => (
+    <section class="wide">
+      <h2>{topic}</h2>
+      <div class="grid">
+        {all.filter((p) => p.data.topic === topic).map((p) => (
+          <a class="card" href={`/learn/${p.id}`}>
+            <span class="tag">{p.data.level}</span><span class="tag">{p.data.free ? 'Free' : 'Paid'}</span>
+            <h3 style="margin-top:10px">{p.data.title}</h3>
+            <p>{p.data.description}</p>
+            <p class="meta" style="margin-top:10px">{p.data.minutes} min</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <section class="wide">
+    <h2>Coming next</h2>
+    <div class="grid">
+      {soon.map((s) => (
+        <div class="card" style="opacity:.75"><h3>{s.t}</h3><p>{s.d}</p></div>
+      ))}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+---
+<Base title="Work with me" description="1:1 DevOps/SRE mentoring, small freelance tasks, and technical writing from Mahendra Rao.">
+  <section class="wide hero">
+    <p class="eyebrow">Work with me</p>
+    <h1>Three ways I can help.</h1>
+    <p class="lead">No fluff, no jargon. Tell me where you're stuck and I'll tell you honestly if I'm the right person.</p>
+  </section>
+
+  <section class="wide">
+    <div class="grid">
+      <div class="card">
+        <h3>🧭 1:1 Mentoring</h3>
+        <p>For freshers and career-switchers heading into DevOps/SRE: Linux, Bash, Docker, Kubernetes, CI/CD, and how interviews actually go. A roadmap you can follow, plus someone to ask.</p>
+        <div class="row">
+          {SITE.topmate
+            ? <a class="btn" href={SITE.topmate}>Book a session</a>
+            : <a class="btn" href={`mailto:${SITE.email}?subject=Mentoring`}>Ask about mentoring</a>}
+        </div>
+      </div>
+      <div class="card">
+        <h3>🛠️ Small DevOps tasks</h3>
+        <p>Shell scripts, Dockerfiles, CI pipelines, server clean-up, monitoring set-up. Clearly scoped, fixed-price when possible.</p>
+        <div class="row"><a class="btn ghost" href={`mailto:${SITE.email}?subject=DevOps task`}>Describe your task</a></div>
+      </div>
+      <div class="card">
+        <h3>✍️ Technical writing</h3>
+        <p>Hands-on tutorials for dev tools, where every command is tested before it's published. Open to guest posts and documentation work.</p>
+        <div class="row"><a class="btn ghost" href={`mailto:${SITE.email}?subject=Writing`}>Pitch a topic</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wide">
+    <h2>About me</h2>
+    <p style="max-width:40em">
+      I'm a DevOps/SRE engineer with about 11 years of experience, based in Pune.
+      I've worked with Linux servers, CI/CD, containers, and cloud infrastructure in
+      production, and I've informally guided junior engineers along the way.
+      This site is where I'm turning that experience into guides that are simple to follow.
+      For my full work history, see my <a href={SITE.portfolio}>portfolio</a>.
+    </p>
+  </section>
+</Base>

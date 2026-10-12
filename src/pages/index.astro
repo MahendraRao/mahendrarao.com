@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../config';
+
+const posts = (await getCollection('learn', (p) => !p.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+<Base>
+  <section class="wide hero">
+    <p class="eyebrow">DevOps · SRE · 11 years in production</p>
+    <h1>Tech, explained like<br />a patient senior is sitting next to you.</h1>
+    <p class="lead">
+      I'm Mahendra. I've spent 11 years keeping servers alive. Here I write small,
+      tested, beginner-friendly guides: Bash, Docker, Kubernetes, YAML. Every command
+      is run by me before you see it.
+    </p>
+    <div class="row">
+      <a class="btn" href="/learn">Start learning (free)</a>
+      <a class="btn ghost" href="/work-with-me">Work with me</a>
+    </div>
+    <pre class="terminal"><span class="c"># your first script, in 3 lines</span>
+<span class="p">$</span> echo '#!/usr/bin/env bash' &gt; hello.sh
+<span class="p">$</span> echo 'echo "Hello, $USER!"' &gt;&gt; hello.sh
+<span class="p">$</span> bash hello.sh
+Hello, you!</pre>
+  </section>
+
+  <section class="wide">
+    <h2>How every guide works</h2>
+    <div class="grid">
+      <div class="card"><h3>1 · Copy &amp; run</h3><p>A tiny working script first. You see it work before you read the theory.</p></div>
+      <div class="card"><h3>2 · Break it</h3><p>On purpose. Errors stop being scary once you've caused them yourself.</p></div>
+      <div class="card"><h3>3 · Fix &amp; challenge</h3><p>Then a small task to try alone. That is where it actually sticks.</p></div>
+    </div>
+  </section>
+
+  <section class="wide">
+    <h2>Latest from Knowledge Park 101</h2>
+    <div class="grid">
+      {posts.map((p) => (
+        <a class="card" href={`/learn/${p.id}`}>
+          <span class="tag">{p.data.topic}</span><span class="tag">{p.data.level}</span>
+          <h3 style="margin-top:10px">{p.data.title}</h3>
+          <p>{p.data.description}</p>
+          <p class="meta" style="margin-top:10px">{p.data.minutes} min · {p.data.free ? 'Free' : 'Paid'}</p>
+        </a>
+      ))}
+    </div>
+    <p><a href="/learn">See the full learning path →</a></p>
+  </section>
+
+  <section class="wide">
+    <h2>Need a hand?</h2>
+    <p style="max-width:36em">
+      1:1 mentoring for freshers moving into DevOps/SRE, small DevOps tasks, and
+      technical writing. Tell me what you're stuck on.
+    </p>
+    <div class="row">
+      <a class="btn" href="/work-with-me">See how I can help</a>
+      <a class="btn ghost" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    </div>
+  </section>
+</Base>
