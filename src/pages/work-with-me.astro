@@ -1,6 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SITE } from '../config';
+const enc = encodeURIComponent;
+const taskMail = `mailto:${SITE.email}?subject=${enc('DevOps task')}&body=${enc('Hi Mahendra,\n\nWhat I need done:\n\nTools / tech involved:\n\nDeadline:\n\nBudget (rough):\n')}`;
+const writeMail = `mailto:${SITE.email}?subject=${enc('Writing pitch')}&body=${enc('Hi Mahendra,\n\nTopic:\n\nWhere it will be published:\n\nLength / deadline:\n\nRate:\n')}`;
+const askMail = `mailto:${SITE.email}?subject=${enc('Mentoring')}`;
 ---
 <Base title="Work with me" description="1:1 DevOps/SRE mentoring, small freelance tasks, and technical writing from Mahendra Rao.">
   <section class="wide hero">
@@ -17,20 +21,23 @@ import { SITE } from '../config';
         <div class="row">
           {SITE.topmate
             ? <a class="btn" href={SITE.topmate}>Book a session</a>
-            : <a class="btn" href={`mailto:${SITE.email}?subject=Mentoring`}>Ask about mentoring</a>}
+            : <a class="btn" href={askMail}>Ask about mentoring</a>}
         </div>
       </div>
       <div class="card">
         <h3>🛠️ Small DevOps tasks</h3>
         <p>Shell scripts, Dockerfiles, CI pipelines, server clean-up, monitoring set-up. Clearly scoped, fixed-price when possible.</p>
-        <div class="row"><a class="btn ghost" href={`mailto:${SITE.email}?subject=DevOps task`}>Describe your task</a></div>
+        <div class="row"><a class="btn ghost" href={taskMail}>Describe your task</a></div>
       </div>
       <div class="card">
         <h3>✍️ Technical writing</h3>
         <p>Hands-on tutorials for dev tools, where every command is tested before it's published. Open to guest posts and documentation work.</p>
-        <div class="row"><a class="btn ghost" href={`mailto:${SITE.email}?subject=Writing`}>Pitch a topic</a></div>
+        <div class="row"><a class="btn ghost" href={writeMail}>Pitch a topic</a></div>
       </div>
     </div>
+    <p class="meta" style="margin-top:20px">
+      Button not opening your mail app? Just write to <strong>{SITE.email}</strong>. Same inbox, same reply.
+    </p>
   </section>
 
   <section class="wide">
