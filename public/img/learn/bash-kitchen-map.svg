@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 450" role="img" aria-labelledby="t d">
+<title id="t">Restaurant kitchen compared with a Bash script</title>
+<desc id="d">Five pairs: recipe card is the script file hello.sh, head chef is bash, labelled ingredient box is a variable tomato=5, numbered-slot tray is an array, and the stop-service alarm is exit 1.</desc>
+<rect width="520" height="450" rx="16" fill="#faf7f0"/>
+<text x="260" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="700" fill="#1d1b17">Your script is a recipe card</text>
+<text x="121" y="76" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#b45f06" letter-spacing="1.5">IN THE KITCHEN</text>
+<text x="399" y="76" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#b45f06" letter-spacing="1.5">IN BASH</text>
+<rect x="16" y="92" width="210" height="56" rx="10" fill="#fdf0d8" stroke="#b45f06"/>
+<text x="121" y="127" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#1d1b17">Recipe card</text>
+<rect x="294" y="92" width="210" height="56" rx="10" fill="#1d1b17"/>
+<text x="399" y="127" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" fill="#f4efe3">hello.sh</text>
+<path d="M238 120h34" stroke="#b45f06" stroke-width="3" stroke-linecap="round"/>
+<path d="M282 120l-11 -7v14z" fill="#b45f06"/>
+<rect x="16" y="162" width="210" height="56" rx="10" fill="#fdf0d8" stroke="#b45f06"/>
+<text x="121" y="197" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#1d1b17">Head chef reads it</text>
+<rect x="294" y="162" width="210" height="56" rx="10" fill="#1d1b17"/>
+<text x="399" y="197" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" fill="#f4efe3">bash</text>
+<path d="M238 190h34" stroke="#b45f06" stroke-width="3" stroke-linecap="round"/>
+<path d="M282 190l-11 -7v14z" fill="#b45f06"/>
+<rect x="16" y="232" width="210" height="56" rx="10" fill="#fdf0d8" stroke="#b45f06"/>
+<text x="121" y="267" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#1d1b17">Box labelled &quot;TOMATO&quot;</text>
+<rect x="294" y="232" width="210" height="56" rx="10" fill="#1d1b17"/>
+<text x="399" y="267" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" fill="#f4efe3">tomato=5</text>
+<path d="M238 260h34" stroke="#b45f06" stroke-width="3" stroke-linecap="round"/>
+<path d="M282 260l-11 -7v14z" fill="#b45f06"/>
+<rect x="16" y="302" width="210" height="56" rx="10" fill="#fdf0d8" stroke="#b45f06"/>
+<text x="121" y="337" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#1d1b17">Numbered-slot tray</text>
+<rect x="294" y="302" width="210" height="56" rx="10" fill="#1d1b17"/>
+<text x="399" y="337" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" fill="#f4efe3">tools=(a b c)</text>
+<path d="M238 330h34" stroke="#b45f06" stroke-width="3" stroke-linecap="round"/>
+<path d="M282 330l-11 -7v14z" fill="#b45f06"/>
+<rect x="16" y="372" width="210" height="56" rx="10" fill="#fdf0d8" stroke="#b45f06"/>
+<text x="121" y="407" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#1d1b17">&quot;Stop service!&quot; alarm</text>
+<rect x="294" y="372" width="210" height="56" rx="10" fill="#1d1b17"/>
+<text x="399" y="407" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" fill="#f4efe3">exit 1</text>
+<path d="M238 400h34" stroke="#b45f06" stroke-width="3" stroke-linecap="round"/>
+<path d="M282 400l-11 -7v14z" fill="#b45f06"/>
+</svg>
