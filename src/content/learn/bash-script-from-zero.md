@@ -588,4 +588,4 @@ Stuck? Email me what you tried. The email is at the bottom of this page.
 - Failure signal: `exit 1` (the alarm)
 - Debug: `bash -x`, `set -euo pipefail`, ShellCheck (CCTV, stop-service rule, inspector)
 
-**Next up:** loops, functions, and reading files line by line.
+**Next up:** [Loops and functions, and reading files line by line](/learn/bash-loops-and-functions/).
