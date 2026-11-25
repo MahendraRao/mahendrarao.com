@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 560" role="img" aria-labelledby="t d">
+<title id="t">How the bill script works</title>
+<desc id="d">Five steps from top to bottom. The file bill.txt holds three order slips. A while read loop takes one slip at a time. The price function looks up the price like a menu board. The total is added up like a till. The final bill, Total 185, is printed. Steps two to four repeat for every slip.</desc>
+<rect width="520" height="560" rx="16" fill="#faf7f0"/>
+<rect x="16" y="24" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="61" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">bill.txt</text>
+<text x="286" y="61" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">3 order slips on the rail</text>
+<path d="M133 88h16l-8 10z" fill="#b45f06"/>
+<rect x="16" y="120" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="157" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">while read -r item qty</text>
+<text x="286" y="157" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">chef takes one slip</text>
+<path d="M133 184h16l-8 10z" fill="#b45f06"/>
+<rect x="16" y="216" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="253" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">price &quot;$item&quot;</text>
+<text x="286" y="253" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">menu board gives price</text>
+<path d="M133 280h16l-8 10z" fill="#b45f06"/>
+<rect x="16" y="312" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="349" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">total = total + cost</text>
+<text x="286" y="349" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">till adds it up</text>
+<path d="M133 376h16l-8 10z" fill="#b45f06"/>
+<rect x="16" y="408" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="445" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">Total: 185</text>
+<text x="286" y="445" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">bill is printed</text>
+<path d="M500 138 h8 v 214 h-8" fill="none" stroke="#b45f06" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="260" y="548" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6b665c">steps 2 to 4 repeat once for every slip</text>
+</svg>
