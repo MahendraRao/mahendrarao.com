@@ -51,8 +51,16 @@ header.site .wide { display: flex; align-items: center; justify-content: space-b
 .logo-mark .tile { fill: var(--logo); }
 .logo-mark .glyph { fill: none; stroke: var(--logo-on); stroke-width: 5; }
 .logo-mark .cursor { fill: var(--logo-on); animation: cursor-blink 1.1s steps(1, end) infinite; }
+.logo-mark .chev { animation: type-in 0.01s steps(1, end) 0.8s both; }
+.logo-mark .letter { animation: type-in 0.01s steps(1, end) 1.5s both; }
+.brand-text { animation: type-reveal 1.2s steps(12, end) 2s both; }
 @keyframes cursor-blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .logo-mark .cursor { animation: none; } }
+@keyframes type-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes type-reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+/* Reduced motion: no typing sequence, but the cursor keeps its slow on/off blink (opacity only, no movement). */
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark .chev, .logo-mark .letter, .brand-text { animation: none; }
+}
 nav.site a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: 15px; }
 nav.site a:hover, nav.site a[aria-current='page'] { color: var(--ink); }
 footer.site { border-top: 1px solid var(--line); margin-top: 80px; padding: 32px 0 48px; color: var(--muted); font-size: 15px; }
