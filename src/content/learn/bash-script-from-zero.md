@@ -11,6 +11,12 @@ free: true
 
 By the end of this page you will have written, saved, run, **broken** and **fixed** real Bash scripts. No prior knowledge needed. You only need a terminal (Linux, macOS, or WSL on Windows).
 
+<div class="lab-cta">
+<p class="lab-cta-title">🖥️ No terminal? Try it in a real one, right in your browser.</p>
+<p><a class="btn" href="https://killercoda.com/mahendrarao/scenario/bash-first-script" target="_blank" rel="noopener">▶ Open the hands-on lab</a></p>
+<p class="lab-cta-note"><strong>Note:</strong> you need a <strong>free</strong> Killercoda account (sign in with Google, GitHub or email). Nothing to install. A free session lasts about 60 minutes; paid accounts get up to 4 hours. Prefer your own computer? Open Terminal on a Mac or Linux, or use WSL on Windows. Everything on this page works there too.</p>
+</div>
+
 > Every script below was run by me on Bash 5.2 before I wrote this. The outputs you see are real, not made up.
 
 **How each section works.** Every idea comes in the same four parts, so you always know where you are:
@@ -576,6 +582,12 @@ Hints: `[ -z "$name" ]` is true when `name` is empty. You have already seen ever
 
 Stuck? Email me what you tried. The email is at the bottom of this page.
 
+</div>
+
+<div class="lab-cta">
+<p class="lab-cta-title">🏁 Ready to practise for real?</p>
+<p><a class="btn" href="https://killercoda.com/mahendrarao/scenario/bash-first-script" target="_blank" rel="noopener">▶ Open the hands-on lab (15 min)</a></p>
+<p class="lab-cta-note"><strong>Note:</strong> you need a <strong>free</strong> Killercoda account (sign in with Google, GitHub or email). Nothing to install. A free session lasts about 60 minutes; paid accounts get up to 4 hours. The lab checks your work and gives hints when something is wrong.</p>
 </div>
 
 ## Recap

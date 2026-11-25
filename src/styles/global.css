@@ -114,3 +114,10 @@ article hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
 article figure { margin: 28px 0; }
 article figure img { display: block; width: 100%; max-width: 520px; margin: 0 auto; height: auto; border-radius: 12px; border: 1px solid var(--line); }
 article figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; text-align: center; }
+
+/* lab call-to-action (Killercoda) */
+.lab-cta { margin: 24px 0; padding: 16px 20px 6px; border: 1px solid var(--line); border-left: 5px solid var(--ok); border-radius: 0 12px 12px 0; background: var(--surface); }
+.lab-cta p { margin: 0 0 12px; }
+.lab-cta-title { font-weight: 700; }
+.lab-cta .btn { text-decoration: none; }
+.lab-cta-note { font-size: 14px; color: var(--muted); }
