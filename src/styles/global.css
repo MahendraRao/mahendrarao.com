@@ -10,6 +10,8 @@
   --code-ink: #f4efe3;
   --ok: #2f7d4f;
   --bad: #b3372b;
+  --logo: #2f7d4f;
+  --logo-on: #faf7f0;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
@@ -24,6 +26,8 @@
     --accent: #f2b84b;
     --accent-bg: #2b2412;
     --code-bg: #0e0d0a;
+    --logo: #4ade80;
+    --logo-on: #15140f;
   }
 }
 * { box-sizing: border-box; }
@@ -41,8 +45,14 @@ a:hover { text-decoration-thickness: 2px; }
 /* header / footer */
 header.site { border-bottom: 1px solid var(--line); }
 header.site .wide { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; padding-bottom: 16px; gap: 16px; flex-wrap: wrap; }
-.brand { font-family: var(--mono); font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; }
-.brand span { color: var(--accent); }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; }
+.brand-text span { color: var(--logo); }
+.logo-mark { display: block; flex: none; width: 36px; height: 36px; }
+.logo-mark .tile { fill: var(--logo); }
+.logo-mark .glyph { fill: none; stroke: var(--logo-on); stroke-width: 5; }
+.logo-mark .cursor { fill: var(--logo-on); animation: cursor-blink 1.1s steps(1, end) infinite; }
+@keyframes cursor-blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .logo-mark .cursor { animation: none; } }
 nav.site a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: 15px; }
 nav.site a:hover, nav.site a[aria-current='page'] { color: var(--ink); }
 footer.site { border-top: 1px solid var(--line); margin-top: 80px; padding: 32px 0 48px; color: var(--muted); font-size: 15px; }

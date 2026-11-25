@@ -28,7 +28,15 @@ const is = (p: string) => (p === '/' ? path === '/' : path.startsWith(p));
   <body>
     <header class="site">
       <div class="wide">
-        <a class="brand" href="/">mahendra<span>.</span>rao</a>
+        <a class="brand" href="/" aria-label="mahendra.rao, home">
+          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <rect class="tile" width="64" height="64" rx="15" />
+            <path class="glyph" d="M8 22 L19 32 L8 42" />
+            <path class="glyph" d="M36 45 V20 L45.5 33 L55 20 V45" />
+            <rect class="cursor" x="22" y="41" width="9" height="5" />
+          </svg>
+          <span class="brand-text">mahendra<span>.</span>rao</span>
+        </a>
         <nav class="site" aria-label="Main">
           <a href="/learn" aria-current={is('/learn') ? 'page' : undefined}>Knowledge Park 101</a>
           <a href="/work-with-me" aria-current={is('/work-with-me') ? 'page' : undefined}>Work with me</a>
