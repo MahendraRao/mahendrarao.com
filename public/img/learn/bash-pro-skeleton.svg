@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 540" role="img" aria-labelledby="t d">
+<title id="t">The skeleton of a professional Bash script</title>
+<desc id="d">Five steps from top to bottom. The getopts loop reads the options. Checks make sure the inputs are valid. A scratch folder is made and a cleanup promise is set with trap. The tar command does the work. The cleanup always runs when the script exits.</desc>
+<rect width="520" height="540" rx="16" fill="#faf7f0"/>
+<rect x="16" y="24" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="61" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">getopts</text>
+<text x="286" y="61" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">read the options</text>
+<rect x="16" y="120" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="157" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">[[ -d $src ]]</text>
+<text x="286" y="157" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">check the inputs</text>
+<rect x="16" y="216" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="253" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">mktemp -d + trap</text>
+<text x="286" y="253" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">scratch + cleanup promise</text>
+<rect x="16" y="312" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="349" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">tar -czf ...</text>
+<text x="286" y="349" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">do the real work</text>
+<rect x="16" y="408" width="250" height="60" rx="10" fill="#1d1b17"/>
+<text x="141" y="445" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#f4efe3">exit</text>
+<text x="286" y="445" font-family="system-ui, sans-serif" font-size="15" fill="#1d1b17">the cleanup always runs</text>
+<path d="M133 88h16l-8 10z" fill="#b45f06"/>
+<path d="M133 184h16l-8 10z" fill="#b45f06"/>
+<path d="M133 280h16l-8 10z" fill="#b45f06"/>
+<path d="M133 376h16l-8 10z" fill="#b45f06"/>
+<text x="260" y="518" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6b665c">the same order as backup.sh</text>
+</svg>
