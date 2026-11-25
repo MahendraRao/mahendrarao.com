@@ -623,4 +623,4 @@ Stuck? Email me what you tried. The email is at the bottom of this page.
 - `local` keeps a function's variables from leaking out
 - `case "$x" in a) ... ;; *) ... ;; esac`: a menu board for many choices
 
-**Next up:** working with text (grep, cut, sort), and checking whether things worked.
+**Next up:** [Pipes, text tools and logic](/learn/bash-pipes-text-and-logic/): grep, cut, sort, awk, redirects, exit codes and `&&` / `||`.
