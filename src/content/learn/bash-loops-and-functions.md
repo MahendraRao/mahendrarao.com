@@ -12,8 +12,8 @@ free: true
 In the [first article](/learn/bash-script-from-zero/) you wrote scripts that run top to bottom, once. Real work repeats: ten servers, a hundred files, a thousand log lines. By the end of this page you will make Bash repeat things for you (**loops**), name a job once and reuse it (**functions**), and read a file line by line.
 
 <div class="lab-cta">
-<p class="lab-cta-title">🖥️ No terminal? Practise in a real Linux machine in your browser.</p>
-<p><a class="btn" href="https://killercoda.com/playgrounds/scenario/ubuntu" target="_blank" rel="noopener">▶ Open the playground</a></p>
+<p class="lab-cta-title">🖥️ No terminal? Try it in a real one, right in your browser.</p>
+<p><a class="btn" href="https://killercoda.com/mahendrarao/scenario/bash-loops-functions" target="_blank" rel="noopener">▶ Open the hands-on lab</a></p>
 <p class="lab-cta-note"><strong>Note:</strong> you need a <strong>free</strong> Killercoda account (sign in with Google, GitHub or email). Nothing to install. A free session lasts about 60 minutes; paid accounts get up to 4 hours. A guided lab for this article is coming soon. Prefer your own computer? Open Terminal on a Mac or Linux, or use WSL on Windows. Everything on this page works there too.</p>
 </div>
 
@@ -609,6 +609,12 @@ Hints: capture the function's answer with `result=$(grade "$marks")`, and count 
 
 Stuck? Email me what you tried. The email is at the bottom of this page.
 
+</div>
+
+<div class="lab-cta">
+<p class="lab-cta-title">🏁 Ready to practise for real?</p>
+<p><a class="btn" href="https://killercoda.com/mahendrarao/scenario/bash-loops-functions" target="_blank" rel="noopener">▶ Open the hands-on lab (25 min)</a></p>
+<p class="lab-cta-note"><strong>Note:</strong> you need a <strong>free</strong> Killercoda account (sign in with Google, GitHub or email). Nothing to install. A free session lasts about 60 minutes; paid accounts get up to 4 hours. The lab checks your work and gives hints when something is wrong.</p>
 </div>
 
 ## Recap
