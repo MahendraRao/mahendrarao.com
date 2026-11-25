@@ -227,7 +227,7 @@ pasta
 ```bash
 #!/usr/bin/env bash
 n=0
-while IFS= read -r order; do
+while IFS= read -r order || [ -n "$order" ]; do
   n=$((n + 1))
   echo "Order $n: $order"
 done < orders.txt
@@ -244,6 +244,7 @@ Total orders: 3
 Two things to notice:
 - `< orders.txt` at the end feeds the file into the loop. `read` takes one line each round, and the loop stops when the file runs out.
 - `IFS= read -r` is a safe habit. `-r` keeps backslashes as they are, and `IFS=` keeps spaces at the start of a line.
+- `|| [ -n "$order" ]` catches a last line that has **no newline at the end**. Some editors save files that way, and without this guard `read` would quietly drop that last line. `-n` means "this text is not empty".
 
 </div>
 
@@ -546,7 +547,7 @@ price() {
   esac
 }
 total=0
-while read -r item qty; do
+while read -r item qty || [ -n "$item" ]; do
   cost=$(( $(price "$item") * qty ))
   echo "$item x$qty = $cost"
   total=$((total + cost))
@@ -561,7 +562,7 @@ pasta x1 = 120
 Total: 185
 ```
 
-Notice how it reuses everything: a **loop** reads the file, a **function** knows the prices, and a **variable** keeps the total. `read -r item qty` splits each line into two variables at the space.
+Notice how it reuses everything: a **loop** reads the file, a **function** knows the prices, and a **variable** keeps the total. `read -r item qty` splits each line into two variables at the space. The `|| [ -n "$item" ]` guard is the same one from section 3, so a missing newline on the last line cannot cost you a dish.
 
 </div>
 
@@ -598,7 +599,7 @@ meena: Try again
 Passed: 2
 ```
 
-Hints: capture the function's answer with `result=$(grade "$marks")`, and count passes with `passed=$((passed + 1))`.
+Hints: capture the function's answer with `result=$(grade "$marks")`, and count passes with `passed=$((passed + 1))`. Use the same `|| [ -n "$name" ]` guard on your `read` loop, so the last student is never skipped.
 
 Stuck? Email me what you tried. The email is at the bottom of this page.
 
@@ -610,7 +611,7 @@ Stuck? Email me what you tried. The email is at the bottom of this page.
 - `for f in *.txt`: every matching file. Do not parse `ls`, and quote your variables
 - `while [ condition ]; do ... done`: repeat until the condition changes (stir until thick)
 - `continue` skips one round, `break` leaves the loop
-- `while IFS= read -r line; do ... done < file`: read a file line by line
+- `while IFS= read -r line || [ -n "$line" ]; do ... done < file`: read a file line by line, even if the last line has no newline
 - `name() { ... }`: define a function first, call it after. `$1` is its first argument
 - Give back a value with `echo` and `$(...)`, or a yes/no with the status (`$?`)
 - `local` keeps a function's variables from leaking out
