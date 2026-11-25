@@ -12,8 +12,8 @@ free: true
 In the [first three articles](/learn/bash-pipes-text-and-logic/) you learned to write scripts, repeat work, handle text and make decisions. Now the step from "a script that works for me" to **"a script other people can trust"**. By the end of this page your scripts will take **arguments and options**, use **lookup tables**, **clean up after themselves**, fail with a clear message, and run on a **schedule** without you.
 
 <div class="lab-cta">
-<p class="lab-cta-title">🖥️ No terminal? Practise in a real Linux machine in your browser.</p>
-<p><a class="btn" href="https://killercoda.com/playgrounds/scenario/ubuntu" target="_blank" rel="noopener">▶ Open the playground</a></p>
+<p class="lab-cta-title">🖥️ No terminal? Try it in a real one, right in your browser.</p>
+<p><a class="btn" href="https://killercoda.com/mahendrarao/scenario/bash-like-a-pro" target="_blank" rel="noopener">▶ Open the hands-on lab</a></p>
 <p class="lab-cta-note"><strong>Note:</strong> you need a <strong>free</strong> Killercoda account (sign in with Google, GitHub or email). Nothing to install. A free session lasts about 60 minutes; paid accounts get up to 4 hours. Prefer your own computer? Open Terminal on a Mac or Linux, or use WSL on Windows. Everything on this page works there too (see the Mac note in section 5).</p>
 </div>
 
@@ -1114,6 +1114,12 @@ Hints: `while getopts ":n:" opt` takes `-n` with a value. After the loop, `shift
 
 Stuck? Email me what you tried. The email is at the bottom of this page.
 
+</div>
+
+<div class="lab-cta">
+<p class="lab-cta-title">🏁 Ready to practise for real?</p>
+<p><a class="btn" href="https://killercoda.com/mahendrarao/scenario/bash-like-a-pro" target="_blank" rel="noopener">▶ Open the hands-on lab (25 min)</a></p>
+<p class="lab-cta-note"><strong>Note:</strong> you need a <strong>free</strong> Killercoda account (sign in with Google, GitHub or email). Nothing to install. A free session lasts about 60 minutes; paid accounts get up to 4 hours. The lab checks your work and gives hints when something is wrong.</p>
 </div>
 
 ## Recap
