@@ -95,3 +95,22 @@ article hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
 .callout { padding: 20px; border: 1px dashed var(--accent); border-radius: 14px; background: var(--accent-bg); margin-top: 48px; }
 .callout h3 { margin-top: 0; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* story blocks (Situation / Restaurant / Technical / Try it) */
+.story { margin: 24px 0; padding: 14px 18px 6px; border: 1px solid var(--line); border-left-width: 5px; border-radius: 0 12px 12px 0; background: var(--surface); }
+.story > :last-child { margin-bottom: 8px; }
+.story p { margin: 6px 0 10px; }
+.story pre { margin: 10px 0; }
+.story-label { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px !important; }
+.story.situation { border-left-color: #6b665c; }
+.story.situation .story-label { color: var(--muted); }
+.story.restaurant { border-left-color: var(--accent); background: var(--accent-bg); }
+.story.restaurant .story-label { color: var(--accent); }
+.story.technical { border-left-color: #3b6ea8; }
+.story.technical .story-label { color: #3b6ea8; }
+.story.tryit { border-left-color: var(--ok); }
+.story.tryit .story-label { color: var(--ok); }
+@media (prefers-color-scheme: dark) { .story.technical .story-label { color: #7fb0e8; } .story.technical { border-left-color: #7fb0e8; } .story.tryit .story-label { color: #6fcf97; } .story.tryit { border-left-color: #6fcf97; } }
+article figure { margin: 28px 0; }
+article figure img { display: block; width: 100%; max-width: 520px; margin: 0 auto; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+article figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; text-align: center; }
