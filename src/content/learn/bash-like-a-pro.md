@@ -446,11 +446,11 @@ fallback:    none
 
 A memory trick: on a keyboard `#` sits to the **left** of `$`, and `%` to the **right**. So `#` cuts from the left (front) and `%` cuts from the right (end). One symbol means the **shortest** match, two mean the **longest**.
 
-A real use: renaming many files. First print what you *would* do (a "dry run"), then remove the `echo` when it looks right:
+A real use: renaming many files. First print what you *would* do (a "dry run"), then remove the `echo` when it looks right. The quotes around each name keep file names with spaces safe, and they are already in the right place for the real `mv`:
 
 ```bash
 for f in menu/*.txt; do
-  echo "mv $f ${f%.txt}.bak"
+  echo mv "$f" "${f%.txt}.bak"
 done
 ```
 
@@ -965,12 +965,14 @@ trap 'rm -rf "$tmp"; log "cleaned up"' EXIT
 declare -A kinds=()
 for f in "$src"/*; do
   [[ -f $f ]] || continue
-  ext="${f##*.}"
+  name="${f##*/}"
+  ext="${name##*.}"
+  [[ $name == *.* && -n $ext ]] || ext="none"
   kinds[$ext]=$(( ${kinds[$ext]:-0} + 1 ))
 done
 
 for ext in "${!kinds[@]}"; do
-  log "found ${kinds[$ext]} .$ext file(s)"
+  log "found ${kinds[$ext]} file(s) of type: $ext"
 done | sort
 
 archive="$tmp/kitchen-$tag.tar.gz"
@@ -993,8 +995,8 @@ Save it as `backup.sh` and run `chmod +x backup.sh`. First a **dry run** with ch
 ```
 
 ```text
-found 1 .csv file(s)
-found 3 .txt file(s)
+found 1 file(s) of type: csv
+found 3 file(s) of type: txt
 Dry run: would write backups/kitchen-daily.tar.gz
 cleaned up
 ```
@@ -1007,8 +1009,8 @@ tar -tzf backups/kitchen-monday.tar.gz | sort
 ```
 
 ```text
-found 1 .csv file(s)
-found 3 .txt file(s)
+found 1 file(s) of type: csv
+found 3 file(s) of type: txt
 Backed up to backups/kitchen-monday.tar.gz
 cleaned up
 ./
@@ -1046,7 +1048,7 @@ Every piece comes from this page:
 | `BASH_VERSINFO[0] < 4` | the Mac note in section 5: refuse to run on a Bash that is too old |
 | `usage` and exit code 2 | section 2 |
 | `getopts ":vns:d:t:"` | section 3: ticks `-v -n`, fields `-s -d -t` |
-| `${f##*.}` | section 4: cut the front to get the extension |
+| `${f##*/}` and `${name##*.}` | section 4: cut the front to get the file name, then the extension (a name with no extension, or ending in a dot, becomes `none` so it never breaks the array) |
 | `declare -A kinds` | section 5: a counter per file type |
 | `mktemp -d` and `trap ... EXIT` | section 6: private scratch folder, always cleaned |
 | `if (( verbose ))` instead of `a && b` | section 7: no `&&`/`||` surprises under `set -e` |
