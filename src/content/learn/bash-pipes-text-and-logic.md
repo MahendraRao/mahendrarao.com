@@ -12,8 +12,8 @@ free: true
 In the [first article](/learn/bash-script-from-zero/) you wrote scripts. In the [second](/learn/bash-loops-and-functions/) you made them repeat work. Real scripts also **handle text**: read a log, count things, pick a column, and then decide what to do based on whether a step worked. By the end of this page you will connect commands with **pipes**, search and total up text, control **where output goes**, and use **exit codes and logic** (`&&`, `||`, `!`) so a script can decide for itself.
 
 <div class="lab-cta">
-<p class="lab-cta-title">🖥️ No terminal? Practise in a real Linux machine in your browser.</p>
-<p><a class="btn" href="https://killercoda.com/playgrounds/scenario/ubuntu" target="_blank" rel="noopener">▶ Open the playground</a></p>
+<p class="lab-cta-title">🖥️ No terminal? Try it in a real one, right in your browser.</p>
+<p><a class="btn" href="https://killercoda.com/mahendrarao/scenario/bash-pipes-text-logic" target="_blank" rel="noopener">▶ Open the hands-on lab</a></p>
 <p class="lab-cta-note"><strong>Note:</strong> you need a <strong>free</strong> Killercoda account (sign in with Google, GitHub or email). Nothing to install. A free session lasts about 60 minutes; paid accounts get up to 4 hours. Prefer your own computer? Open Terminal on a Mac or Linux, or use WSL on Windows. Everything on this page works there too.</p>
 </div>
 
@@ -1091,6 +1091,12 @@ Hints: the `awk` tally from section 4 gives you the per-dish totals. Put the qua
 
 Stuck? Email me what you tried. The email is at the bottom of this page.
 
+</div>
+
+<div class="lab-cta">
+<p class="lab-cta-title">🏁 Ready to practise for real?</p>
+<p><a class="btn" href="https://killercoda.com/mahendrarao/scenario/bash-pipes-text-logic" target="_blank" rel="noopener">▶ Open the hands-on lab (20 min)</a></p>
+<p class="lab-cta-note"><strong>Note:</strong> you need a <strong>free</strong> Killercoda account (sign in with Google, GitHub or email). Nothing to install. A free session lasts about 60 minutes; paid accounts get up to 4 hours. The lab checks your work and gives hints when something is wrong.</p>
 </div>
 
 ## Recap
