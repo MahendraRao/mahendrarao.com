@@ -1107,4 +1107,4 @@ Stuck? Email me what you tried. The email is at the bottom of this page.
 - `A && B || C` is **not** an if/else; `set -e` stops the script when `grep` finds nothing; quote your variables
 - `set -o pipefail` stops a pipeline from hiding a failure in the middle
 
-**Next up:** Bash like a pro: script arguments and options (`$@`, `shift`, `getopts`), safe scripts (`trap`, temp files), arrays that work like dictionaries, `${var}` tricks, and running scripts on a schedule with `cron`.
+**Next up:** [Bash like a pro](/learn/bash-like-a-pro/): script arguments and options (`$@`, `getopts`), safe scripts (`trap`, temp files), arrays that work like dictionaries, `${var}` tricks, and running scripts on a schedule with `cron`.
